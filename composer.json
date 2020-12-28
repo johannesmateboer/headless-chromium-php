@@ -1,8 +1,8 @@
 {
-    "name": "chrome-php/chrome",
+    "name": "chrome-php-tor/chrome",
     "description": "Instrument headless chrome/chromium instances",
     "type": "library",
-    "keywords": ["chrome", "chromium", "crawl", "browser", "headless", "screenshot", "pdf", "puppeteer"],
+    "keywords": ["chrome", "chromium", "crawl", "browser", "headless", "screenshot", "pdf", "puppeteer", "tor"],
     "license": "Fair",
     "authors": [
         {
@@ -12,6 +12,10 @@
         {
           "name": "Graham Campbell",
           "email": "graham@alt-three.com"
+        },
+        {
+            "name": "Johannes Mateboer",
+            "email": "joh@nnes.site"
         }
     ],
     "require": {
