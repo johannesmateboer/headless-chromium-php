@@ -37,17 +37,17 @@ class Page
     /**
      * @var Target
      */
-    protected $target;
+    protected Target $target;
 
     /**
      * @var FrameManager
      */
-    protected $frameManager;
+    protected FrameManager $frameManager;
 
     /**
      * @var Mouse|Null
      */
-    protected $mouse;
+    protected ?Mouse $mouse;
 
     /**
      * Page constructor.
@@ -256,12 +256,12 @@ class Page
                 const script = document.createElement("script");
                 script.type = "text/javascript";
                 script.src = src;
-                
+
                 const promise = new Promise((res, rej) => {
                     script.onload = res;
                     script.onerror = rej;
                 });
-                
+
                 document.head.appendChild(script);
                 await promise;
             }';
@@ -271,12 +271,12 @@ class Page
                 var script = document.createElement("script");
                 script.type = "text/javascript";
                 script.text = scriptContent;
-                
+
                 let error = null;
                 script.onerror = e => {error = e};
-                
+
                 document.head.appendChild(script);
-                
+
                 if (error) {
                     throw error;
                 }
@@ -793,7 +793,7 @@ class Page
      * Gets the raw html of the current page.
      *
      * @return string
-     * @throws Exception\CommunicationException
+     * @throws Exception\CommunicationException|Exception\EvaluationFailed
      */
     public function getHtml()
     {
