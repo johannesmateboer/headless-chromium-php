@@ -357,6 +357,11 @@ class BrowserProcess implements LoggerAwareInterface
             $args =  array_merge($args, $options['customFlags']);
         }
 
+        // proxy server
+        if (array_key_exists('proxyServer', $options)) {
+            $args[] = '--proxy-server=' . $options['proxyServer'];
+        }
+
         // add user data dir to args
         $args[] = '--user-data-dir=' . $options['userDataDir'];
 

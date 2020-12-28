@@ -46,6 +46,8 @@ class BrowserFactory
      * - userAgent: user agent to use for the browser
      * - userDataDir: chrome user data dir (default: a new empty dir is generated temporarily)
      * - windowSize: size of the window, ex: [1920, 1080] (default: none)
+     * - proxyServer: Uses a specified proxy server, overrides system settings.
+     *   This switch only affects HTTP and HTTPS requests. I.e.: "socks5://myproxy:8080"
      *
      * @return ProcessAwareBrowser a Browser instance to interact with the new chrome process
      */
